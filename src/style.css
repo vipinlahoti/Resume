@@ -1,0 +1,321 @@
+@import "normalize.css";
+
+$c-accent: #CF1414;
+$c-light: #b8b8b8;
+$c-lighter: #ccc;
+$size-med: 1.3077rem;
+$size-sm: 0.8077rem;
+$size-lg: 3.4321rem;
+
+$pad: 1rem;
+$pad-xsm: 0.3rem;
+
+$double-border: 4px double $c-light;
+
+@define-placeholder t-b {
+  font-weight: bold;
+}
+@define-placeholder t-upper {
+  text-transform: uppercase;
+}
+@define-placeholder sm {
+  font-size: $size-sm;
+}
+
+/* Resets
+============================= */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0;
+}
+
+/* General layout
+============================= */
+
+.wrapper {
+  padding: $pad;
+  max-width: 710px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media only print {
+    max-width: 860px;
+  }
+}
+
+section + section {
+  margin-top: $pad;
+}
+
+footer {
+  border-top: $double-border;
+  margin-top: $pad;
+  padding-top: $pad;
+}
+
+@media only screen {
+  .print-only {
+    display: none;
+  }
+}
+
+@media only print {
+  .no-print {
+    display: none;
+  }
+}
+
+/* Contact information
+============================= */
+
+address {
+  border-top: $double-border;
+  border-bottom: $double-border;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  margin-top: $pad;
+
+  @media only screen and (max-width: 600px) {
+    font-size: $size-sm;
+  }
+}
+
+.contact-detail {
+  float: left;
+
+  & + &:before {
+    color: $c-light;
+    content: "\2022"; /* bullet */
+    float: left;
+    margin-left: $pad;
+    margin-right: $pad;
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+    float: none;
+    & + &:before {
+      display: none;
+    }
+  }
+}
+
+/* Lists
+============================= */
+
+ul {
+  padding-left: 0.75em;
+  list-style-type: none;
+}
+
+ul > li {
+  position: relative;
+}
+
+ul > li:before {
+  content: "\2022"; /* bullet */
+  color: $c-light;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -0.75em;
+  width: 0.75em;
+}
+
+/* Typography
+============================= */
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: Droid Serif, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+@media (min-width: 53.75em) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media print {
+  html {
+    font-size: 12px;
+  }
+  body {
+    line-height: 1.4;
+  }
+}
+
+a {
+  color: $c-accent;
+  display: inline-block; /* prevent line breaks */
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $c-accent;
+    outline: 1px dotted;
+  }
+
+  @media only print {
+    color: inherit;
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+b {
+  @extend t-b;
+}
+
+sup {
+  font-size: 0.7em;
+}
+
+.sm {
+  @extend sm;
+}
+
+.name {
+  @extend t-b;
+  @extend t-upper;
+  font-size: $size-lg;
+  line-height: 1;
+  margin: 0;
+
+  @media only screen and (max-width: 400px) {
+    font-size: 2.5rem;
+  }
+}
+
+.heading {
+  font-family: Oswald, Arial, sans-serif;
+  @extend t-b;
+}
+
+.heading-1 {
+  font-size: 1.7rem;
+  margin: $pad 0;
+}
+
+.feature {
+  @extend t-b;
+  font-size: 1.3rem;
+  margin-bottom: $pad;
+  margin-top: $pad;
+
+  @media only print {
+    font-size: 1.1rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1rem;
+  }
+}
+
+/* Open source projects
+============================= */
+
+.open-source-list {
+  margin-top: $pad;
+  margin-bottom: $pad;
+}
+
+/* Jobs
+============================= */
+
+.job {
+  @extend t-b;
+}
+
+.job-details {
+  @extend sm;
+  margin-bottom: $pad-xsm;
+}
+
+/* Print columns
+============================= */
+
+.row,
+.print-row {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.print-col {
+  width: 100%;
+}
+
+@media only print {
+  .print-row {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+
+  .print-col {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    width: 50%;
+    float: left;
+  }
+}
+
+/* Footer links
+============================= */
+
+.footer-link {
+  display: inline-block;
+  margin-right: $pad;
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+}
+
+/* Header things
+============================= */
+
+.online-aside {
+  @extend sm;
+  float: right;
+  text-align: right;
+  width: 150px;
+}
+
+.print-button {
+  float: right;
+  fill: $c-light;
+  cursor: pointer;
+  svg {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 1px dotted;
+    color: $c-accent;
+    fill: $c-accent;
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+}
