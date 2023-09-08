@@ -5,7 +5,7 @@ import { cn, addComponent } from "@/lib";
 const textVariants = cva("block scroll-m-20", {
   variants: {
     variant: {
-      p: "font-light leading-7 [&:not(:first-child)]:mt-6",
+      p: "font-light leading-7 [&:not(:first-child)]:mt-4",
       h1: "mb-4 text-4xl md:text-4xl font-extrabold tracking-tight xl:text-7xl",
       h2: "mb-6 text-6xl font-semibold",
       h3: "mb-4 text-5xl font-semibold",

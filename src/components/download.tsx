@@ -2,7 +2,7 @@ import { addComponent } from "@/lib";
 
 const Download = () => {
   return (
-    <div className="mt-8">
+    <div className="mt-8 mb-4">
       <a
         href="/resume.pdf"
         target="_blank"

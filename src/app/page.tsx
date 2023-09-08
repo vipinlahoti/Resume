@@ -10,6 +10,15 @@ export default function Home() {
       <Components.Features />
       <Components.Profiles />
       <Components.Download />
+      <Components.Text variant="muted">
+        Write an email to{" "}
+        <a
+          href="mailto:hi@vipinlahoti.com"
+          className="text-primary underline-offset-4 underline"
+        >
+          hi@vipinlahoti.com
+        </a>
+      </Components.Text>
     </Components.Hero>
   );
 }
