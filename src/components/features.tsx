@@ -6,6 +6,11 @@ const Features = () => {
       <Components.Text variant="overline">My tech stack</Components.Text>
       <div className="flex space-x-4 mt-2 justify-center lg:justify-start">
         <Components.Image src="/js.svg" alt="JavaScript" title="JavaScript" />
+        <Components.Image
+          src="/typescript.svg"
+          alt="Typescript"
+          title="Typescript"
+        />
         <Components.Image src="/react.svg" alt="React.js" title="React.js" />
         <Components.Image src="/next.svg" alt="Next.js" title="Next.js" />
         <Components.Image
