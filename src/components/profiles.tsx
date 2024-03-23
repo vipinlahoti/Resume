@@ -2,7 +2,7 @@ import { Components, addComponent } from "@/lib";
 
 const Profiles = () => {
   return (
-    <div className="mt-10">
+    <div className="mt-10 mb-2">
       <div className="flex space-x-4 mt-2 justify-center lg:justify-start">
         <a
           href="https://github.com/vipinlahoti"
